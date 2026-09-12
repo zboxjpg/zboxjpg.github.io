@@ -1,0 +1,170 @@
+@font-face {
+    font-family: WindowsCommandPrompt;
+    src: url('/assets/font.ttf')
+}
+
+@keyframes window {
+    from { transform: translateY(25px); }
+    to { transform: translateY(0); }
+}
+
+* {
+    margin: 0 auto;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: WindowsCommandPrompt;
+    font-size: 24px;
+}
+
+.card {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--border-color);
+    outline: 2px solid var(--border-color);
+    outline-offset: 5px;
+    z-index: 2;
+    background-color: var(--background-color);
+}
+
+#background {
+    position: absolute;
+    width: 100%; 
+    height: 100%; 
+}
+
+#background > .card {
+    border: 2px solid var(--bg-border-color);
+    outline: 2px solid var(--bg-border-color);
+    z-index: 1;
+    color: var(--bg-border-color);
+    background-color: var(--bg-background-color);
+}
+
+#background > .card > * {
+    background-color: var(--bg-background-color);
+}
+
+.animated {
+    animation: window 1.5s steps(4) infinite alternate;
+}
+
+.selected {
+    text-decoration: underline;
+}
+
+#profile {
+    left: 40%;
+    top: 16%;
+    padding: 25px 20px;
+    justify-content: center;
+}
+
+#links {
+    right: 5%;
+    bottom: 16%;
+    padding: 25px 20px;
+}
+
+#taro {
+    left: 5%;
+    top: 12%;
+    padding: 15px;
+    background-color: var(--background-color);
+}
+
+#themes {
+    right: 7%;
+    top: 13%;
+    padding: 25px 50px;
+    justify-content: space-evenly;
+}
+
+#timer {
+    left: 6%;
+    bottom: 12%;
+    width: 240px;
+}
+
+#taro > img {
+    width: 312px;
+    cursor: pointer;
+}
+
+.close-button {
+    position: absolute;
+    background-color: var(--background-color);
+    right: 12px;
+    top: -12px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.title {
+    position: absolute;
+    background-color: var(--background-color);
+    left: 12px;
+    top: -12px;
+}
+
+.taro-title {
+    position: absolute;
+    background-color: var(--background-color);
+    text-align: center;
+    bottom: -12px;
+    left: 12px;
+    right: 12px;
+    width: fit-content;
+}
+
+.select-theme {
+    text-decoration: none;
+}
+
+#links > *:not(.ui) {
+    padding: 8px 20px;
+}
+
+#profile > *:not(.ui) {
+    padding: 15px;
+}
+
+#timer > *:not(.ui) {
+    padding: 25px;
+}
+
+a {
+    color: #ddd;
+}
+
+a:hover {
+    text-decoration-style: double;
+}
+
+img {
+    width: 256px;
+    image-rendering: pixelated;
+}
+
+@media(max-width: 1366px) {
+    #taro > img{
+        width: 225px;
+    }
+}
+
+#mobile {
+    position: absolute;
+    left: calc(50% - 24px);
+    top: calc(50% - (69.33px) / 2);
+    width: 48px;
+}

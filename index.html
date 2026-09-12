@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/themes.css">
+        <title>zboxjpg</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="background">
+            <img id="mobile" src="assets/mobile.png">
+        </div>
+        <div class="card" id="timer">
+            <span class="ui title">[ TIMER ]</span>
+            <span class="ui close-button">[ x ]</span>
+
+            <span id="clock" style="font-size: 48px;">00:00:00</span>
+        </div>
+        <div class="card" id="themes">
+            <span class="ui title">[ THEMES ]</span>
+            <span class="ui close-button">[ x ]</span>
+
+            <span class="select-theme" onclick="change_theme(this.innerHTML)">monokai</span>
+            <span class="select-theme" onclick="change_theme(this.innerHTML)">ayu</span>
+            <span class="select-theme" onclick="change_theme(this.innerHTML)">classic</span>
+        </div>
+        <div class="card" id="profile">
+            <span class="ui title">[ PROFILE ]</span>
+            <span class="ui close-button">[ x ]</span>
+            <span>@zboxjpg</span>
+            <img src="/assets/avatar.png">
+        </div>
+        <div class="card" id="links">
+            <span class="ui title">[ LINKS ]</span>
+            <span class="ui close-button">[ x ]</span>
+            <a target="_blank" href="https://github.com/wertolebus/">github/wertolebus</a>
+            <a target="_blank" href="https://youtube.com/@zboxjpg">youtube/zboxjpg</a>
+        </div>
+        <div class="card" id="taro">
+            <span class="ui title">[ RANDOM ISAAC CARD ]</span>
+            <span class="ui close-button">[ x ]</span>
+            <span class="ui taro-title"></span>
+            <img src="" onclick="refresh_isaac_card()">
+        </div>
+    </body>
+    <script src="scripts/mobile.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/bg.js"></script>
+    <script src="scripts/theme.js"></script>
+</html>
