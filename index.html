@@ -7,14 +7,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div id="background">
-            <img id="mobile" src="assets/mobile.png">
+        <div id="custom-scrollbar">
+            <div id="scroll-thumb"></div>
         </div>
-        <div class="card" id="timer">
-            <span class="ui title">[ TIMER ]</span>
-            <span class="ui close-button">[ x ]</span>
-
-            <span id="clock" style="font-size: 48px;">00:00:00</span>
+        <div id="background">
         </div>
         <div class="card" id="themes">
             <span class="ui title">[ THEMES ]</span>
@@ -41,6 +37,12 @@
             <span class="ui close-button">[ x ]</span>
             <span class="ui taro-title"></span>
             <img src="" onclick="refresh_isaac_card()">
+        </div>
+        <div class="card" id="timer">
+            <span class="ui title">[ TIMER ]</span>
+            <span class="ui close-button">[ x ]</span>
+
+            <span id="clock" style="font-size: 48px;">00:00:00</span>
         </div>
     </body>
     <script src="scripts/mobile.js"></script>

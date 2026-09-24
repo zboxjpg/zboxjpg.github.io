@@ -14,6 +14,10 @@
     user-select: none;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 body {
     background-color: var(--background-color);
     color: var(--text-color);
@@ -156,15 +160,47 @@ img {
     image-rendering: pixelated;
 }
 
-@media(max-width: 1366px) {
+#custom-scrollbar {
+    position: fixed;
+    right: 12px;
+    top: 20px;
+    bottom: 20px;
+    width: 12px;
+    border-left: 2px solid var(--border-color);
+    border-right: 2px solid var(--border-color);
+    z-index: 9999;
+}
+
+#scroll-thumb {
+    position: absolute;
+    left: -8px; 
+    width: 24px;
+    height: 36px;
+    
+    border: 2px solid var(--border-color);
+    outline-offset: 3px;
+    background-color: var(--background-color);
+    
+    border-top: none;
+    border-bottom: none;
+}
+
+@media(orientation: landscape) {
     #taro > img{
         width: 225px;
     }
 }
 
-#mobile {
-    position: absolute;
-    left: calc(50% - 24px);
-    top: calc(50% - (69.33px) / 2);
-    width: 48px;
+@media(orientation: portrait) {
+    .card {
+        position: relative;
+        margin: 25px;
+    }
+
+    #profile, #timer, #themes, #links, #taro {
+        left: 0;
+        width: 80%;
+    }
+
+    #background > .card { position: absolute; }
 }

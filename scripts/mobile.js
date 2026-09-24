@@ -1,15 +1,25 @@
+const thumb = document.getElementById('scroll-thumb');
+const track = document.getElementById('custom-scrollbar');
+
 function isMobile() {
-    const minWidth = 768; // minimum width for desktop devices
-    return window.innerWidth < minWidth || screen.width < minWidth;
+    return window.innerHeight > window.innerWidth;
 }
 
-if (isMobile()) {
-    console.log("Mobile device detected");
-} else {
-    console.log("Desktop device detected");
+if (!isMobile()) {
+    thumb.style.display = 'none';
+    track.style.display = 'none';
 }
 
-if (isMobile()) {
-    let cards = document.querySelectorAll('.card')
-    cards.forEach((el) => {el.style.display = 'none'});
+function updateScroll() {
+    const scrollTop = window.scrollY;
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const trackHeight = track.clientHeight - thumb.clientHeight;
+
+    if (scrollHeight > 0) {
+        const thumbTop = (scrollTop / scrollHeight) * trackHeight;
+        thumb.style.transform = `translateY(${thumbTop}px)`;
+    }
 }
+
+window.addEventListener('scroll', updateScroll);
+window.addEventListener('resize', updateScroll);
