@@ -1,67 +1,3 @@
-@font-face {
-    font-family: WindowsCommandPrompt;
-    src: url('/assets/font.ttf')
-}
-
-@keyframes window {
-    from { transform: translateY(25px); }
-    to { transform: translateY(0); }
-}
-
-* {
-    margin: 0 auto;
-    box-sizing: border-box;
-    user-select: none;
-}
-
-::-webkit-scrollbar {
-    display: none;
-}
-
-body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: WindowsCommandPrompt;
-    font-size: 24px;
-}
-
-.card {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    border: 2px solid var(--border-color);
-    outline: 2px solid var(--border-color);
-    outline-offset: 5px;
-    z-index: 2;
-    background-color: var(--background-color);
-}
-
-#background {
-    position: absolute;
-    width: 100%; 
-    height: 100%; 
-}
-
-#background > .card {
-    border: 2px solid var(--bg-border-color);
-    outline: 2px solid var(--bg-border-color);
-    z-index: 1;
-    color: var(--bg-border-color);
-    background-color: var(--bg-background-color);
-}
-
-#background > .card > * {
-    background-color: var(--bg-background-color);
-}
-
-.animated {
-    animation: window 1.5s steps(4) infinite alternate;
-}
-
-.selected {
-    text-decoration: underline;
-}
-
 #profile {
     left: 40%;
     top: 16%;
@@ -100,27 +36,6 @@ body {
     cursor: pointer;
 }
 
-.close-button {
-    position: absolute;
-    background-color: var(--background-color);
-    right: 12px;
-    top: -12px;
-}
-
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-.title {
-    position: absolute;
-    background-color: var(--background-color);
-    left: 12px;
-    top: -12px;
-}
-
 .taro-title {
     position: absolute;
     background-color: var(--background-color);
@@ -147,42 +62,9 @@ body {
     padding: 25px;
 }
 
-a {
-    color: #ddd;
-}
-
-a:hover {
-    text-decoration-style: double;
-}
-
 img {
     width: 256px;
     image-rendering: pixelated;
-}
-
-#custom-scrollbar {
-    position: fixed;
-    right: 12px;
-    top: 20px;
-    bottom: 20px;
-    width: 12px;
-    border-left: 2px solid var(--border-color);
-    border-right: 2px solid var(--border-color);
-    z-index: 9999;
-}
-
-#scroll-thumb {
-    position: absolute;
-    left: -8px; 
-    width: 24px;
-    height: 36px;
-    
-    border: 2px solid var(--border-color);
-    outline-offset: 3px;
-    background-color: var(--background-color);
-    
-    border-top: none;
-    border-bottom: none;
 }
 
 @media(orientation: landscape) {
@@ -192,15 +74,9 @@ img {
 }
 
 @media(orientation: portrait) {
-    .card {
-        position: relative;
-        margin: 25px;
-    }
-
     #profile, #timer, #themes, #links, #taro {
         left: 0;
         width: 80%;
     }
 
-    #background > .card { position: absolute; }
 }

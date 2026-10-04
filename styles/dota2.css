@@ -1,0 +1,50 @@
+#back {
+    left: 5%;
+    top: 5%;
+    padding: 25px 20px;
+}
+
+#main {
+    --width: 500px;
+    --height: 500px;
+
+    left: calc(50% - var(--width) / 2);
+    top: calc(50% - var(--height) / 2);
+    width: var(--width);
+    height: var(--height);
+
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#timer {
+    left: 6%;
+    bottom: 12%;
+    width: 240px;
+}
+
+#themes {
+    right: 7%;
+    top: 13%;
+    padding: 25px 50px;
+    justify-content: space-evenly;
+}
+
+#timer > *:not(.ui) {
+    padding: 25px;
+}
+
+#random-item {
+    width: 175px;
+    background-color: var(--background-color);
+    border: 2px solid var(--border-color);
+    outline: 2px solid var(--border-color);
+    outline-offset: 5px;
+}
+
+@media(orientation: portrait) {
+    #back, #main, #timer, #themes {
+        left: 0;
+        width: 80%;
+    }
+}

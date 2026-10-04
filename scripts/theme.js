@@ -1,5 +1,6 @@
 function change_theme(theme) {
     document.body.classList = theme;
+    localStorage.setItem('theme', theme)
     let buttons = document.querySelectorAll('.select-theme');
     for (let i = 0; i < buttons.length; i++) {
         if (document.body.classList.contains(buttons[i].innerHTML)) buttons[i].style.textDecoration = "underline";
@@ -7,4 +8,4 @@ function change_theme(theme) {
     }
 }
 
-change_theme('monokai') // currently default cuz i like it
+change_theme(localStorage.getItem('theme') || 'monokai')

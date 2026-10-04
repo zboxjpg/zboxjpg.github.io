@@ -21,3 +21,12 @@ body.monokai {
     --bg-border-color: #7f7f7f;
     --bg-background-color: #1a1a1a;
 }
+
+body.gruber-darker {
+    --text-color: #e4e4ef;
+    --border-color: #e4e4ef;
+    --background-color: #181818;
+    --bg-border-color: #a2a2ac;
+    --bg-background-color: #101010;
+
+}
